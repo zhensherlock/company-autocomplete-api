@@ -6,6 +6,9 @@ import router from './routes'
 
 const app = new Koa()
 
+router.get('/', (ctx) => {
+  ctx.body = 'it is working'
+})
 // router.get('/proxy', async (ctx) => {
 //   const { url } = ctx.query
 //
@@ -31,6 +34,6 @@ const app = new Koa()
 app.use(cors())
 app.use(router.routes())
 
-app.listen(3000, () => {
-  console.log('Proxy server started on port 3000')
+app.listen(80, () => {
+  console.log('Proxy server started on port 80')
 })
