@@ -21,26 +21,27 @@
   "dependencies": {
     "@koa/cors": "^4.0.0",
     "@koa/router": "^12.0.0",
+    "cheerio": "^1.0.0-rc.12",
     "koa": "^2.14.2",
-    "node-fetch": "^2.6.9",
-    "typescript": "^5.0.4"
+    "node-fetch": "^2.6.12",
+    "typescript": "^5.1.6"
   },
   "devDependencies": {
     "@types/koa": "^2.13.6",
     "@types/koa__cors": "^4.0.0",
     "@types/koa__router": "^12.0.0",
-    "@types/node": "^20.1.0",
-    "@types/node-fetch": "^2.6.3",
+    "@types/node": "^20.4.2",
+    "@types/node-fetch": "^2.6.4",
     "@types/webpack-node-externals": "^3.0.0",
-    "@vercel/node": "^2.14.1",
+    "@vercel/node": "^2.15.6",
     "clean-webpack-plugin": "^4.0.0",
     "nodemon": "^2.0.22",
-    "rimraf": "^5.0.0",
-    "terser": "^5.17.2",
-    "terser-webpack-plugin": "^5.3.8",
+    "rimraf": "^5.0.1",
+    "terser": "^5.19.1",
+    "terser-webpack-plugin": "^5.3.9",
     "ts-node": "^10.9.1",
-    "webpack": "^5.82.0",
-    "webpack-cli": "^5.1.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
     "webpack-node-externals": "^3.0.0"
   }
 }
