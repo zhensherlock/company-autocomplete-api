@@ -34,6 +34,6 @@ router.get('/', (ctx) => {
 app.use(cors())
 app.use(router.routes())
 
-app.listen(3000, () => {
-  console.log('server started on port 3000')
+app.listen(8080, () => {
+  console.log('server started on port 8080')
 })
