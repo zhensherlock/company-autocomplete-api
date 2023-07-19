@@ -14,13 +14,7 @@ router.get('/search/:keyword', async (ctx) => {
     }
   }
   const response = await fetch(url, options)
-  const json = await response.json()
-
-  ctx.body = {
-    status: 200,
-    message: 'OK',
-    data: json
-  }
+  ctx.body = await response.json()
 })
 
 router.get('/logo/:id', async (ctx) => {
