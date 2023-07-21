@@ -1,6 +1,6 @@
 {
   "name": "company-autocomplete-api",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "company-autocomplete-api-proxy",
   "type": "module",
   "main": "dist/index.js",
