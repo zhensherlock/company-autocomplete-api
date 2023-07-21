@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es2015"],
+    "target": "es2022",
+    "lib": ["es2022"],
     "sourceMap": true,
     "outDir": "./dist",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "module": "NodeNext",
+    "allowImportingTsExtensions": true
   },
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }
