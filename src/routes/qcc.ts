@@ -29,6 +29,7 @@ router.get('/search/:keyword', async (ctx) => {
   const cookie = getRealCookie(response)
   const html = await response.text()
   const $ = load(html)
+  console.log(html)
   const asyncJsUrl = $('script[src^="/web/async-js/"]').attr('src')
   let jsText
   console.log(asyncJsUrl)
