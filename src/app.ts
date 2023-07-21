@@ -2,7 +2,7 @@ import Koa from 'koa'
 import cors from '@koa/cors'
 // import http from 'http'
 // import https from 'https'
-import router from './routes'
+import router from './routes/index.ts'
 
 const app = new Koa()
 
