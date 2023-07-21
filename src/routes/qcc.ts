@@ -30,13 +30,16 @@ router.get('/search/:keyword', async (ctx) => {
   const html = await response.text()
   const $ = load(html)
   const asyncJsUrl = $('script[src^="/web/async-js/"]').attr('src')
-  let jsHtml
+  let jsText
+  console.log(asyncJsUrl)
   if (asyncJsUrl) {
-    jsHtml = await fetchAsyncJS(`https://www.qcc.com${asyncJsUrl}`, url, cookie)
+    jsText = await fetchAsyncJs(`https://www.qcc.com${asyncJsUrl}`, url, cookie)
   } else {
-    jsHtml = $('script').not('[src]').last().html() || ''
+    jsText = $('script').not('[src]').last().html() || ''
   }
-  const companies = _.get(parseJSON(jsHtml), 'search.searchRes.Result') || []
+  console.log(jsText)
+  jsText = handleJsText(jsText)
+  const companies = _.get(parseJSON(jsText), 'search.searchRes.Result') || []
   ctx.body = {
     status: '200',
     result: companies.map((item: any) => ({
@@ -47,7 +50,7 @@ router.get('/search/:keyword', async (ctx) => {
   }
 })
 
-const fetchAsyncJS = async (url: string, referer: string, cookie: string) => {
+const fetchAsyncJs = async (url: string, referer: string, cookie: string) => {
   const options = {
     'headers': {
       'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0',
@@ -67,7 +70,10 @@ const fetchAsyncJS = async (url: string, referer: string, cookie: string) => {
     'method': 'GET'
   }
   const response = await fetch(url, options)
-  const text = await response.text()
+  return await response.text()
+}
+
+const handleJsText = (text: string) => {
   return text
     .replace('window.__INITIAL_STATE__=', '')
     .replace(';(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());', '')
