@@ -1,7 +1,7 @@
 import Router from '@koa/router'
 import fetch from 'node-fetch'
 import { load } from 'cheerio'
-import { parseJSON } from '../utils/javscript.js'
+import { parseJSON } from '../utils/javscript'
 import _ from 'lodash'
 
 const router = new Router()
@@ -23,7 +23,6 @@ router.get('/search/:keyword', async (ctx) => {
       'Referer': 'https://www.qcc.com/',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
     },
-    'body': null,
     'method': 'GET'
   }
   const response = await fetch(url, options)
@@ -65,7 +64,6 @@ const fetchAsyncJS = async (url: string, referer: string, cookie: string) => {
       'Cookie': cookie,
       'credentials': 'include'
     },
-    'body': null,
     'method': 'GET'
   }
   const response = await fetch(url, options)

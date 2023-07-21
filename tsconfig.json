@@ -6,8 +6,7 @@
     "outDir": "./dist",
     "esModuleInterop": true,
     "strict": true,
-    "module": "NodeNext",
-    "allowImportingTsExtensions": true
+    "module": "NodeNext"
   },
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }

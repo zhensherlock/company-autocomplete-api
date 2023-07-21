@@ -2,7 +2,7 @@ import Koa from 'koa'
 import cors from '@koa/cors'
 // import http from 'http'
 // import https from 'https'
-import router from './routes/index.ts'
+import router from './routes'
 
 const app = new Koa()
 
@@ -34,6 +34,6 @@ router.get('/', (ctx) => {
 app.use(cors())
 app.use(router.routes())
 
-app.listen(8080, () => {
+app.listen(8081, () => {
   console.log('server started on port 8080')
 })

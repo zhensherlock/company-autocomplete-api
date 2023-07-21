@@ -1,9 +1,9 @@
 import Router from '@koa/router';
 
-import qccRouter from './qcc.ts'
-// import tycRouter from './tianyancha.ts'
-import qccOpenRouter from './qcc-open.js'
-// import qxbRouter from './qxb.js'
+import qccRouter from './qcc'
+// import tycRouter from './tianyancha'
+import qccOpenRouter from './qcc-open'
+// import qxbRouter from './qxb'
 
 const router = new Router()
 

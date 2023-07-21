@@ -2,11 +2,10 @@
   "name": "company-autocomplete-api",
   "version": "0.3.0",
   "description": "company-autocomplete-api-proxy",
-  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node-esm src/app.ts",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "start": "node dist/bundle.js"
   },
   "repository": {
@@ -26,7 +25,7 @@
     "isolated-vm": "^4.5.0",
     "koa": "^2.14.2",
     "lodash": "^4.17.21",
-    "node-fetch": "^3.3.1",
+    "node-fetch": "^2.6.12",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
@@ -43,6 +42,7 @@
     "rimraf": "^5.0.1",
     "terser": "^5.19.1",
     "terser-webpack-plugin": "^5.3.9",
+    "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
